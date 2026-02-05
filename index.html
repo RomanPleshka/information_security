@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USB Security Awareness</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --font-heading: 'Orbitron', sans-serif;
+  --font-base: 'Open Sans', sans-serif;
+
+  --step-0: 1rem;
+  --step-2: 1.44rem;
+  --step-3: 1.728rem;
+  --step-4: 2.0736rem;
+
+  --space-xs: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+
+  --lh-standard: 1.4;
+  --lh-flat: 1.1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: url('https://helpimg.s3.us-east-1.amazonaws.com/landing_pages/hack.png') no-repeat center/cover;
+  /* background: url(https://raw.githubusercontent.com/RomanPleshka/test/main/hacked_bg.png) no-repeat center/cover; */
+  color: #fff;
+  font-family: var(--font-base);
+  font-size: var(--step-0);
+  line-height: var(--lh-standard);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+}
+
+h1, h2, h3 {
+  margin: 0 0 var(--space-m) 0;
+  line-height: var(--lh-flat);
+}
+
+h1 {
+  font-size: var(--step-4);
+  font-family: var(--font-heading);
+  position: relative;
+}
+
+.glitch {
+  position: relative;
+  text-shadow: 0.05em 0 rgba(255,0,0,0.75), -0.025em -0.05em rgba(0,255,0,0.75), 0.025em 0.05em rgba(0,0,255,0.75);
+  animation: glitch 500ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0 100%);
+  transform: translate(0.025em, 0.025em);
+  opacity: 0.8;
+}
+
+@keyframes glitch {
+  0%, 14% { text-shadow: 0.05em 0 rgba(255,0,0,0.75), -0.05em -0.025em rgba(0,255,0,0.75), -0.02em 0.05em rgba(0,0,255,0.75); }
+  15%, 49% { text-shadow: -0.05em -0.025em rgba(255,0,0,0.75), 0.025em 0.025em rgba(0,255,0,0.75), -0.05em -0.05em rgba(0,0,255,0.75); }
+  50%, 99% { text-shadow: 0.025em 0.05em rgba(255,0,0,0.75), 0.05em 0 rgba(0,255,0,0.75), 0 -0.05em rgba(0,0,255,0.75); }
+  100% { text-shadow: -0.025em 0 rgba(255,0,0,0.75), -0.025em -0.025em rgba(0,255,0,0.75), -0.025em -0.05em rgba(0,0,255,0.75); }
+}
+
+.wrapper {
+  max-width: 600px;
+  padding: var(--space-m);
+  background: rgba(229,35,42,0.95);
+  border: 3px solid #fff;
+  border-radius: 0.5rem;
+}
+
+.reveal-container, .tips {
+  opacity: 0;
+  animation: fadeIn 0.25s ease-in-out forwards;
+}
+
+.reveal-container { animation-delay: 1.5s; }
+.tips { animation-delay: 3s; }
+
+p { margin: var(--space-xs) 0 0 0; text-align: left; }
+
+h2 { font-size: var(--step-3); margin-bottom: var(--space-m); }
+h3 { font-size: var(--step-2); margin-top: var(--space-m); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <h1 class="glitch">
+    <span aria-hidden="true">You've Been HACKED</span>
+    You've Been HACKED
+    <span aria-hidden="true">You've Been HACKED</span>
+  </h1>
+
+  <div class="reveal-container">
+    <h2>Wir haben Zugriff auf dein System.</h2>
+    <p>
+      Durch das Anschließen dieses USB-Geräts haben wir Zugriff auf deinen Rechner erhalten.
+      Deine Daten, Zugangsdaten und internen Informationen wären nun in den Händen von Angreifern.
+      <br><br>
+      Wäre dies ein echter Angriff, könnten bereits Schadsoftware installiert, Passwörter abgegriffen oder weitere Systeme im Netzwerk kompromittiert worden sein.
+    </p>
+  </div>
+
+  <div class="tips">
+    <h3>Das war eine Simulation.</h3>
+    <p>
+      Dieses Szenario ist Teil einer Security-Awareness-Simulation der Hansgrohe Cyber Security.
+      Ziel ist es zu zeigen, wie gefährlich unbekannte USB-Geräte sein können.
+      <br><br>
+      <strong>Merke:</strong> Schließe niemals fremde oder unbekannte USB-Geräte an.
+      Im Zweifel immer an deine Führungskraft oder die Cybersecurity wenden.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
